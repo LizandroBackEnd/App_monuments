@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { NativeRouter, Routes, Route } from 'react-router-native'
 import { Main } from './src/components/Main'
+import  MonumentDetail  from './src/components/MonumentDetail'
 
 export default function App() {
 	return (
@@ -8,7 +9,7 @@ export default function App() {
 			<NativeRouter>
 				<Routes>
 					<Route path='/' element={<Main />} />
-					<Route path='/ciudad/:id' element={<Text>Inicio</Text>} />
+					<Route path='/ciudad/:id' element={ <MonumentDetail/>} />
 				</Routes>
 			</NativeRouter>
 		</View>

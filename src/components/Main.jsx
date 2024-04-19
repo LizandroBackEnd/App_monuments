@@ -1,27 +1,28 @@
 import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { MONUMENTS } from '../data/monuments'
-import { useNavigation } from 'react-router-native'
+import { Link } from 'react-router-native';
 
 export const Main = () => {
-	const history = useNavigation()
-
-	const handlePress = (ruta) => {
-		history.push(ruta)
-	}
 
 	return (
-		<View style={styles.container}>
-			<Text style={styles.title}>Mexico</Text>
+		<View style={styles.container} >
+			<Text style={styles.title} >Mexico</Text>
 			<Image source={{ uri: uriImage }} width={250} height={200} />
-			{MONUMENTS.map((monuments) => (
-				<TouchableOpacity
-					key={monuments.id}
-					style={styles.button}
-					onPress={() => handlePress(monuments.ruta)}>
-					<Text style={{ color: '#fff' }}>{monuments.nombre}</Text>
-				</TouchableOpacity>
-			))}
+			<Text>Explora algunos de estos monumentos mexicanos</Text>
+
+			<View style={styles.containerButton}>
+				{MONUMENTS.map((monuments) => (
+					<Link
+						key={monuments.id}
+						to={`/ciudad/${monuments.id}`}
+						style={styles.button}
+						component={TouchableOpacity}
+					>
+						<Text style={{ color: '#fff' }}>{monuments.name}</Text>
+					</Link>
+				))}
+			</View>
 		</View>
 	)
 }
@@ -39,10 +40,17 @@ const styles = {
 	},
 	title: {
 		fontSize: 24,
-		fontWeigth: 'bold'
+		fontWeight: 'bold'
+	},
+	containerButton: {
+	 flexDirection: "col",
+		gap: 10,
+		justifyContent: "center",
+		alignItems: "center"
+
 	},
 	button: {
-		backgroundColor: 'blue',
+		backgroundColor: '#0A2E36',
 		padding: 10,
 		borderRadius: 5
 	}

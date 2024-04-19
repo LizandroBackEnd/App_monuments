@@ -8,8 +8,8 @@ export const Main = () => {
 	return (
 		<View style={styles.container} >
 			<Text style={styles.title} >Mexico</Text>
-			<Image source={{ uri: uriImage }} width={250} height={200} />
-			<Text>Explora algunos de estos monumentos mexicanos</Text>
+			<Image source={{ uri: uriImage }} style={styles.image} />
+			<Text style={{ color: '#fff' }}>Explora algunos de estos monumentos mexicanos</Text>
 
 			<View style={styles.containerButton}>
 				{MONUMENTS.map((monuments) => (
@@ -33,14 +33,15 @@ const uriImage =
 const styles = {
 	container: {
 		flex: 1,
-		backgroundColor: '#fff',
+		backgroundColor: '#000',
 		alignItems: 'center',
 		justifyContent: 'center',
 		gap: 20
 	},
 	title: {
 		fontSize: 24,
-		fontWeight: 'bold'
+		fontWeight: 'bold', 
+		color: '#fff',
 	},
 	containerButton: {
 	 flexDirection: "col",
@@ -53,5 +54,10 @@ const styles = {
 		backgroundColor: '#0A2E36',
 		padding: 10,
 		borderRadius: 5
+	}, 
+	image: { 
+		width: 250, 
+		height: 200, 
+		borderRadius: 10,
 	}
 }

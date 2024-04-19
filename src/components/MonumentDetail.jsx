@@ -15,12 +15,12 @@ const MonumentDetail = () => {
     if (!monument) {
         return (
             <View>
-                <Text>Monumento no encontrado</Text>
+                <Text style={{ color: '#fff' }}>Monumento no encontrado</Text>
                 <Link
                 to="/"
                 component={Text}
                 >
-                    <Text>Regresar</Text>
+                    <Text style={{ color: '#fff' }}>Regresar</Text>
                 </Link>
             </View>
         );
@@ -69,7 +69,8 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 10,
+        marginBottom: 10, 
+        color: '#fff'
     },
     image: {
         width: 250,
@@ -78,7 +79,8 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     description: {
-        textAlign: 'center',
+        textAlign: 'center', 
+        color: '#fff'
     },
     containerButton: {
       flexDirection: 'row',
